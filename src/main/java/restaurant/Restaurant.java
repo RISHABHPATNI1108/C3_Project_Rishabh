@@ -4,6 +4,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+// Moved it inside restaurant package, as it was having some issue with mocking library if not in same package
 public class Restaurant {
     private String name;
     private String location;

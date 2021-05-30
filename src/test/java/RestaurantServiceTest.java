@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.*;
+import restaurant.Restaurant;
 
 import java.time.LocalTime;
 

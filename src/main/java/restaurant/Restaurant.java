@@ -1,10 +1,7 @@
+package restaurant;
 
-import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class Restaurant {
@@ -22,7 +19,7 @@ public class Restaurant {
     }
 
     public boolean isRestaurantOpen() {
-        LocalTime localTime = LocalTime.now();
+        LocalTime localTime = getCurrentTime();
         return localTime.isAfter(openingTime) && localTime.isBefore(closingTime);
     }
 

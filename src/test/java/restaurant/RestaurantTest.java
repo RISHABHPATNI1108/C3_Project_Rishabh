@@ -1,16 +1,21 @@
+package restaurant;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.stubbing.Answer;
 
 import java.time.*;
-import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class RestaurantTest {
+
     Restaurant restaurant;
     //REFACTOR ALL THE REPEATED LINES OF CODE
 
@@ -29,12 +34,17 @@ class RestaurantTest {
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time() {
         //WRITE UNIT TEST CASE HERE
 
-        LocalTime currentTime = LocalTime.now();
+        Restaurant mockRestaurant = Mockito.spy(restaurant);
 
-        restaurant.openingTime = currentTime.minusMinutes(1);
-        restaurant.closingTime = currentTime.plusMinutes(1);
+        Mockito.when(mockRestaurant.getCurrentTime()).thenAnswer(new Answer<LocalTime>() {
+            @Override
+            public LocalTime answer(InvocationOnMock invocationOnMock) throws Throwable {
+                return LocalTime.parse("14:20:30");
+            }
+        });
 
-        Boolean isOpen = restaurant.isRestaurantOpen();
+
+        Boolean isOpen = mockRestaurant.isRestaurantOpen();
         assertEquals(true, isOpen);
     }
 
@@ -57,7 +67,7 @@ class RestaurantTest {
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1() {
-         int initialMenuSize = restaurant.getMenu().size();
+        int initialMenuSize = restaurant.getMenu().size();
         restaurant.addToMenu("Sizzling brownie", 319);
         assertEquals(initialMenuSize + 1, restaurant.getMenu().size());
     }

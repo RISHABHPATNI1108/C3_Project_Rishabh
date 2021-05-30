@@ -1,7 +1,10 @@
 import org.junit.jupiter.api.*;
+import restaurant.Item;
 import restaurant.Restaurant;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -64,4 +67,19 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1, service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    /*
+        Get selected items as a method parameter and calculate amount
+        return that amount
+     */
+
+    @Test
+    public void add_selected_item_should_be_equal_to_total_amount_of_items() {
+        List<Item> selectedItems = new ArrayList<>();
+        selectedItems.add(restaurant.getMenu().get(0));
+
+        assertEquals(119, service.calculateAmount(selectedItems));
+    }
+
+
 }

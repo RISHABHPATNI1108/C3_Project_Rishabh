@@ -3,7 +3,6 @@ package restaurant;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -91,4 +90,10 @@ class RestaurantTest {
                 () -> restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>ITEM TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        
+
+    //<<<<<<<<<<<<<<<<<<<<<<<ITEM TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 }

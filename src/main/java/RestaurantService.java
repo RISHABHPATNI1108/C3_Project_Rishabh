@@ -1,3 +1,4 @@
+import restaurant.Item;
 import restaurant.Restaurant;
 
 import java.time.LocalTime;
@@ -38,5 +39,9 @@ public class RestaurantService {
 
     public List<Restaurant> getRestaurants() {
         return restaurants;
+    }
+
+    public int calculateItemTotal(List<Item> selectedItems) {
+        return 0;
     }
 }

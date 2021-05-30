@@ -78,7 +78,14 @@ class RestaurantServiceTest {
         List<Item> selectedItems = new ArrayList<>();
         selectedItems.add(restaurant.getMenu().get(0));
 
-        assertEquals(119, service.calculateAmount(selectedItems));
+        assertEquals(119, service.calculateItemTotal(selectedItems));
+    }
+
+    @Test
+    public void total_of_empty_selected_items_should_be_equal_to_zeero() {
+        List<Item> selectedItems = new ArrayList<>();
+
+        assertEquals(0, service.calculateItemTotal(selectedItems));
     }
 
 

@@ -41,7 +41,5 @@ public class RestaurantService {
         return restaurants;
     }
 
-    public int calculateItemTotal(List<Item> selectedItems) {
-        return 0;
-    }
+
 }

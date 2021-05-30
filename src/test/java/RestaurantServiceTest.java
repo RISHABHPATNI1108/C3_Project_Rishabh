@@ -70,7 +70,8 @@ class RestaurantServiceTest {
 
     /*
         Get selected items as a method parameter and calculate amount
-        return that amount
+        return that amount.
+        No need to check exception of selected item is present in restaurant menu or not
      */
 
     @Test

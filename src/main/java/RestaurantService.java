@@ -41,5 +41,13 @@ public class RestaurantService {
         return restaurants;
     }
 
+    public int calculateItemTotal(List<Item> selectedItems) {
+        int totalAmount = 0;
 
+        for (Item item : selectedItems) {
+            totalAmount += item.getPrice();
+        }
+
+        return totalAmount;
+    }
 }

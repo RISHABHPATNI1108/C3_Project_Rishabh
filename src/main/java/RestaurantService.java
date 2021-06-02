@@ -1,6 +1,3 @@
-import restaurant.Item;
-import restaurant.Restaurant;
-
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
